@@ -1,25 +1,8 @@
 # General Development Environment
 
-Welcome!  This development environment is meant to get you up and running fast.
-This environment is intended for development.
-
-This repository assumes you already have [Vagrant installed][vagrant] and
-[VirtualBox installed][vbox].
-
-# Prerequisites
-
-### Required software
-
-* Install the [latest version of Vagrant][vagrant] (Vagrant 1.8.1 as of this
-  writing).
-* Install the [latest version of VirtualBox][vbox] (VirtualBox 5.0.12 as of this
-  writing).
-
-### System requirements
-
-See Tips and Tricks (documented below) for getting more performance out of the
-VM.  I recommend leaving at least 2GB of RAM for your operating system and other
-applications.
+This repository assumes you already have [Vagrant
+installed](https://www.vagrantup.com/vagrant) and [VirtualBox
+installed](https://www.virtualbox.org/wiki/Downloads).
 
 # Provision development environment
 
@@ -54,7 +37,7 @@ Alternatively, open a terminal and execute the following.
 
 # Tips and Tricks
 
-### More performance
+## More performance
 
 Currently the vagrant box is relatively low spec with the default 8MB video RAM,
 2048MB RAM, and 1 CPU core.  The `build-gimp.sh` script will automatically take
