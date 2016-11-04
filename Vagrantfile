@@ -11,14 +11,15 @@ Vagrant.configure(2) do |config|
   # https://docs.vagrantup.com.
 
   version = "0.3"
-  hostname = "gimpdev"
+  hostname = "dev"
   locale = "en_US.UTF-8"
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
   # https://atlas.hashicorp.com/debian/
-  config.vm.box = "debian/jessie64"
-  config.vm.box_version = "8.2.0"
+  # config.vm.box = "debian/jessie64"
+  config.vm.box = "bento/debian-8.6"
+  #config.vm.box_version = "8.2.0"
 
   #Shared folders
   config.vm.synced_folder "./setup", "/build"
@@ -32,9 +33,9 @@ Vagrant.configure(2) do |config|
     vb.gui = true
 
     # Customize the VM specs (memory values in MB)
-    vb.memory = "2048"
+    vb.memory = "4096"
     #vb.customize ["modifyvm", :id, "--vram", "128"]
-    #vb.cpus = "8"
+    vb.cpus = "3"
   end
   #
   # View the documentation for the provider you are using for more

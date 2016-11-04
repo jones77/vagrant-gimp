@@ -1,19 +1,10 @@
-|--------------------------------------|
-| GIMP Vagrant Development Environment |
-|--------------------------------------|
+|---------------------------------|
+| Vagrant Development Environment |
+|---------------------------------|
 
 Welcome!  This development environment is meant to get you up and running fast.
-This environment is intended for development of the GNU Image Manipulation
-Program or GIMP for short.
 
-GIMP Development Resources:
+Development Resources:
 
 * /vagrant/README.md
 * /vagrant/objectives.md
-* http://www.gimp.org/source/
-* http://www.gimp.org/develop/
-
-Source code is located in ~/git/
-Build GIMP: ~/build-gimp.sh
-Install location: ~/gimp-git/bin/gimp-2.9
-User configuration files: ~/.config/GIMP/2.9

@@ -4,29 +4,28 @@ source /build/buildconfig
 echo "Configuring environment."
 set -x
 
+BASENAME=`basename $0`
+
 #configure apt for passwordless auth
 /build/apt/install.sh
 
 #prepare and update system
 /build/tryscript.sh apt-get upgrade
-/build/tryscript.sh apt-get install git vim screen
+/build/tryscript.sh apt-get install \
+    \
+    git \
+    vim \
+    \
+# end
 
-#set up KDE Desktop Environment
-/build/tryscript.sh /build/kde/install.sh
+for component in \
+    \
+    configure \
+    kde \
+    tmux
+do
+    echo "$BASENAME Installing $component"
+    /build/tryscript.sh /build/${component}/install.sh
+done
 
-#set vagrant user password to "gimp"
-echo "vagrant:gimp" | chpasswd
-/build/dotfiles/install.sh
-
-#configure environment for development
-/build/tryscript.sh /build/gimp-packages/install.sh
-/build/tryscript.sh /build/gimp-packages/shared-prereqs.sh
-/build/tryscript.sh /build/gimp-packages/gimp-prereqs.sh
-/build/tryscript.sh /build/gimp-packages/babl-prereqs.sh
-/build/tryscript.sh /build/gimp-packages/gegl-prereqs.sh
-/build/tryscript.sh /build/libmypaint-packages/install.sh
-/build/gimp-source/install.sh
-/build/libmypaint-source/install.sh
-
-#a helpful message when a user logs in with vagrant ssh
 cp -f /build/motd /etc/
