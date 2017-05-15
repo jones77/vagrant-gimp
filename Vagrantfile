@@ -34,7 +34,7 @@ Vagrant.configure(2) do |config|
 
     # Customize the VM specs (memory values in MB)
     vb.memory = "4096"
-    #vb.customize ["modifyvm", :id, "--vram", "128"]
+    vb.customize ["modifyvm", :id, "--vram", "256"]
     vb.cpus = "3"
   end
   #

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
 source /build/buildconfig
 echo "Configuring environment."
@@ -6,17 +6,17 @@ set -x
 
 BASENAME=`basename $0`
 
-#configure apt for passwordless auth
+# configure apt for passwordless auth
 /build/apt/install.sh
 
-#prepare and update system
+# prepare and update system
 /build/tryscript.sh apt-get upgrade
 /build/tryscript.sh apt-get install \
     \
     git \
     vim \
+    xterm \
     \
-# end
 
 for component in \
     \
